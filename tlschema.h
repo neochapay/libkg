@@ -1194,6 +1194,7 @@ enum Types
     AuthSignUpMethod = -2131827673, //0x80eee427
     AuthSignInMethod = -1923962543, //0x8d52a951
     AuthLogOutMethod = 1047706137, //0x3e72ba19
+    AuthCheckPassword = -1923962543, //0x8d52a951
     AuthResetAuthorizationsMethod = -1616179942, //0x9fab0d1a
     AuthExportAuthorizationMethod = -440401971, //0xe5bfffcd
     AuthImportAuthorizationMethod = -1518699091, //0xa57a7dad

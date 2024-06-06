@@ -106,6 +106,7 @@ public slots:
     void handleRpcError(qint32 errorCode, QString errorMessage, qint64 messageId);
     void handleAuthorized(qint64 userId);
     void handleTFARequired();
+    void handleAuthCheckPassword();
 
     static TgObject emptyInputPeer();
     static TgObject selfInputPeer();
@@ -122,6 +123,7 @@ public slots:
     TgLongVariant helpGetCountriesList(qint32 hash = 0, QString langCode = "");
     TgLongVariant authSendCode(QString phoneNumber);
     TgLongVariant authSignIn(QString phoneNumber, QString phoneCodeHash, QString phoneCode);
+    TgLongVariant authCheckPassword(QString password);
     TgLongVariant messagesGetDialogs(qint32 offsetDate = 0, qint32 offsetId = 0, TgObject offsetPeer = TgObject(), qint32 limit = 20, qint32 folderId = 0, bool excludePinned = false, TgLongVariant hash = 0);
     TgLongVariant messagesGetDialogsWithOffsets(TgObject offsets = TgObject(), qint32 limit = 20, qint32 folderId = 0, bool excludePinned = false, TgLongVariant hash = 0);
     TgLongVariant authSignUp(QString phoneNumber, QString phoneCodeHash, QString firstName, QString lastName = "");
@@ -154,6 +156,7 @@ signals:
 
     void helpCountriesListResponse(TgObject data, TgLongVariant messageId);
     void authSentCodeResponse(TgObject data, TgLongVariant messageId);
+    void authCheckPasswordResponse(TgObject data, TgLongVariant messageId);
     //emits for auth.Authorizations that are visible to end user only
     void authAuthorizationResponse(TgObject data, TgLongVariant messageId);
     void messagesDialogsResponse(TgObject data, TgLongVariant messageId);

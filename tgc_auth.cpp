@@ -49,3 +49,10 @@ TgLongVariant TgClient::authSignUp(QString phoneNumber, QString phoneCodeHash, Q
 
     return sendObject<&writeTLMethodAuthSignUp>(method);
 }
+
+TgLongVariant TgClient::authCheckPassword(QString password)
+{
+    TGOBJECT(TLType::AuthCheckPassword, method);
+    method["password"] = password;
+    return sendObject<&writeTLMethodAuthCheckPassword>(method);
+}

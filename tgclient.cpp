@@ -268,6 +268,12 @@ void TgClient::handleTFARequired()
     emit tfaRequired();
 }
 
+void TgClient::handleAuthCheckPassword()
+{
+    kgDebug() << "Check 2FA password";
+    qDebug() << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
+}
+
 void TgClient::handleConnected()
 {
     kgDebug() << "Client connected";
